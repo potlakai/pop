@@ -1,0 +1,335 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pranav Desu | Leadership Portfolio</title>
+<meta name="description" content="Professional Online Portfolio: how I lead, in seven sections.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%230b1f3a'/%3E%3Ctext x='32' y='43' font-family='Arial' font-weight='700' font-size='30' text-anchor='middle' fill='%23ff8a3d'%3EPD%3C/text%3E%3C/svg%3E">
+<style>
+:root{
+  --navy:#0b1f3a;
+  --navy-2:#102a4d;
+  --line:rgba(244,241,234,.07);
+  --line-strong:rgba(244,241,234,.22);
+  --paper:#f4f1ea;
+  --muted:#aebbd0;
+  --accent:#ff8a3d;
+  --sans:"Segoe UI",system-ui,-apple-system,"Helvetica Neue",Arial,sans-serif;
+  --mono:ui-monospace,"Cascadia Mono","Consolas","SF Mono",Menlo,monospace;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-snap-type:y proximity;scroll-behavior:smooth;scroll-padding-top:0}
+body{
+  background:var(--navy);
+  background-image:
+    linear-gradient(var(--line) 1px,transparent 1px),
+    linear-gradient(90deg,var(--line) 1px,transparent 1px);
+  background-size:48px 48px;
+  color:var(--paper);
+  font-family:var(--sans);
+  line-height:1.35;
+  -webkit-font-smoothing:antialiased;
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+
+/* top bar */
+.bar{
+  position:fixed;inset:0 0 auto 0;z-index:10;
+  display:flex;align-items:center;justify-content:space-between;gap:16px;
+  padding:14px clamp(16px,4vw,56px);
+  background:linear-gradient(var(--navy) 60%,transparent);
+  font-family:var(--mono);font-size:14px;letter-spacing:.08em;text-transform:uppercase;
+}
+.bar .who{color:var(--paper);font-weight:700;white-space:nowrap}
+.bar nav{display:flex;gap:4px;flex-wrap:wrap;justify-content:flex-end}
+.bar nav a{
+  color:var(--muted);text-decoration:none;padding:6px 10px;border:1px solid transparent;border-radius:3px;
+}
+.bar nav a:hover{color:var(--paper)}
+.bar nav a.on{color:var(--navy);background:var(--accent);font-weight:700}
+.bar nav a:focus-visible,.dots a:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+
+/* sections */
+section{
+  min-height:100vh;min-height:100svh;
+  scroll-snap-align:start;
+  display:flex;flex-direction:column;justify-content:center;
+  padding:84px clamp(16px,6vw,96px) 56px;
+  position:relative;
+  border-bottom:1px solid var(--line-strong);
+}
+.stamp{
+  font-family:var(--mono);font-size:clamp(14px,1.3vw,18px);letter-spacing:.14em;text-transform:uppercase;
+  color:var(--accent);margin-bottom:18px;display:flex;gap:14px;align-items:center;
+}
+.stamp::before{content:"";width:34px;height:2px;background:var(--accent)}
+h1{font-size:clamp(44px,8vw,112px);line-height:.98;letter-spacing:-.02em;font-weight:800}
+h2{font-size:clamp(34px,5.2vw,72px);line-height:1.03;letter-spacing:-.015em;font-weight:800;max-width:18ch}
+h2 em,h1 em{font-style:normal;color:var(--accent)}
+.lede{font-size:clamp(20px,2.1vw,30px);color:var(--muted);max-width:40ch;margin-top:18px}
+.lede b{color:var(--paper);font-weight:600}
+.proof{
+  margin-top:26px;padding:16px 20px;border-left:4px solid var(--accent);background:var(--navy-2);
+  font-size:clamp(18px,1.7vw,24px);max-width:60ch;
+}
+.proof span{display:block;font-family:var(--mono);font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin-bottom:6px}
+
+/* opening */
+.open{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,.65fr);gap:clamp(24px,5vw,80px);align-items:center}
+.shot{
+  position:relative;aspect-ratio:1/1;width:100%;max-width:440px;justify-self:end;
+  border:2px solid var(--paper);padding:10px;
+}
+.shot::after{content:"";position:absolute;right:-14px;bottom:-14px;width:60%;height:60%;border-right:4px solid var(--accent);border-bottom:4px solid var(--accent)}
+.shot img,.shot .mono{width:100%;height:100%;object-fit:cover;object-position:50% 20%;display:block}
+.shot .mono{display:none;align-items:center;justify-content:center;background:var(--navy-2);font-size:96px;font-weight:800;color:var(--accent)}
+.shot.noimg img{display:none}.shot.noimg .mono{display:flex}
+.trait{margin-top:30px;display:inline-grid;gap:4px;border:2px solid var(--accent);padding:14px 20px}
+.trait small{font-family:var(--mono);font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.trait strong{font-size:clamp(28px,3.4vw,46px);letter-spacing:-.01em}
+.role{font-family:var(--mono);font-size:clamp(14px,1.3vw,18px);letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-top:14px}
+
+/* cards */
+.grid{display:grid;gap:16px;margin-top:28px}
+.g3{grid-template-columns:repeat(3,minmax(0,1fr))}
+.card{border:1px solid var(--line-strong);background:rgba(16,42,77,.75);padding:18px 20px}
+.card.hot{border:2px solid var(--accent)}
+.card h3{font-size:clamp(20px,2vw,28px);margin-bottom:6px}
+.card .tag{font-family:var(--mono);font-size:15px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);display:block;margin-bottom:8px}
+.card p{font-size:clamp(18px,1.6vw,22px);color:var(--muted)}
+.card p b{color:var(--paper);font-weight:600}
+.card ul{list-style:none;display:grid;gap:12px}
+.card li strong{display:block;font-size:clamp(20px,1.9vw,26px)}
+.card li span{font-size:clamp(17px,1.5vw,21px);color:var(--muted)}
+
+/* meters */
+.meters{display:grid;gap:14px;margin-top:28px;max-width:900px}
+.meter{display:grid;grid-template-columns:minmax(120px,190px) 1fr;gap:16px;align-items:center;font-size:clamp(18px,1.7vw,24px);font-weight:700}
+.track{height:18px;border:1px solid var(--line-strong);background:var(--navy-2)}
+.fill{height:100%;background:var(--accent)}
+.fill.dim{background:var(--muted)}
+.meter small{display:block;font-weight:400;font-size:14px;color:var(--muted);font-family:var(--mono);letter-spacing:.06em}
+
+/* vision + quote */
+.big{font-size:clamp(30px,4.4vw,64px);line-height:1.1;font-weight:800;letter-spacing:-.015em;max-width:22ch}
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}
+.chips span{font-family:var(--mono);font-size:clamp(13px,1.1vw,16px);letter-spacing:.1em;text-transform:uppercase;border:1px solid var(--line-strong);padding:8px 12px;color:var(--muted)}
+.chips span b{color:var(--accent);font-weight:700}
+blockquote{font-size:clamp(38px,6vw,92px);line-height:1.02;font-weight:800;letter-spacing:-.02em;max-width:14ch}
+blockquote::before{content:"\201C";color:var(--accent)}
+blockquote::after{content:"\201D";color:var(--accent)}
+cite{display:block;margin-top:18px;font-style:normal;font-family:var(--mono);font-size:clamp(15px,1.4vw,20px);letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+
+/* dots + counter */
+.dots{position:fixed;right:clamp(8px,1.6vw,24px);top:50%;transform:translateY(-50%);z-index:10;display:grid;gap:12px}
+.dots a{width:12px;height:12px;border:2px solid var(--muted);display:block}
+.dots a.on{background:var(--accent);border-color:var(--accent)}
+.count{position:fixed;left:clamp(16px,4vw,56px);bottom:16px;z-index:10;font-family:var(--mono);font-size:14px;letter-spacing:.14em;color:var(--muted)}
+.count b{color:var(--accent)}
+
+@media (max-width:860px){
+  html{scroll-snap-type:none}
+  .bar nav{display:none}
+  .open{grid-template-columns:1fr}
+  .shot{justify-self:start;max-width:260px;order:-1}
+  .g3{grid-template-columns:1fr}
+  .dots{display:none}
+  section{padding-top:72px}
+}
+@media (min-width:861px) and (max-height:760px){
+  section{padding-top:64px;padding-bottom:36px}
+  .grid,.meters{margin-top:18px}
+  .proof{margin-top:16px;padding:12px 16px}
+  .card{padding:14px 16px}
+  .card ul{gap:8px}
+  h2{font-size:clamp(30px,4.2vw,56px)}
+  .lede{margin-top:10px;font-size:clamp(18px,1.8vw,24px)}
+  .shot{max-width:360px}
+}
+</style>
+</head>
+<body>
+
+<header class="bar">
+  <span class="who">Pranav Desu</span>
+  <nav aria-label="Sections">
+    <a href="#opening">Opening</a>
+    <a href="#philosophy">Philosophy</a>
+    <a href="#orientation">Orientation</a>
+    <a href="#skills">Skills</a>
+    <a href="#strengths">Strengths</a>
+    <a href="#vision">Vision</a>
+    <a href="#quote">Quote</a>
+  </nav>
+</header>
+
+<main>
+
+<section id="opening" data-name="Opening">
+  <div class="open">
+    <div>
+      <p class="stamp">Log 01 / Leadership portfolio</p>
+      <h1>Pranav<br>Desu</h1>
+      <p class="lede"><b>I lead by building first.</b> A plan earns trust when people can see a first version of it.</p>
+      <div class="trait">
+        <small>Top leadership trait</small>
+        <strong>Determination</strong>
+      </div>
+      <p class="role">UT Dallas &middot; Finance Chair, UTD Raftaar</p>
+    </div>
+    <div class="shot" id="shot">
+      <img src="headshot.jpg" alt="Headshot of Pranav Desu in a navy blazer" onerror="document.getElementById('shot').classList.add('noimg')">
+      <div class="mono" aria-hidden="true">PD</div>
+    </div>
+  </div>
+</section>
+
+<section id="philosophy" data-name="Philosophy">
+  <p class="stamp">Log 02 / Leadership philosophy and style</p>
+  <h2>I assume people <em>want</em> to do good work.</h2>
+  <p class="lede">That is Theory Y, and it makes me a <b>democratic</b> leader: guidance without pressure, decisions made in the room.</p>
+  <div class="grid g3">
+    <div class="card">
+      <span class="tag">Theory X</span>
+      <h3>People need control</h3>
+      <p>Not my default. I only get directive when a deadline is close and someone has to call it.</p>
+    </div>
+    <div class="card hot">
+      <span class="tag">Theory Y &middot; my default</span>
+      <h3>People are self-motivated</h3>
+      <p><b>Democratic style.</b> I bring a first version, then the group shapes it.</p>
+    </div>
+    <div class="card">
+      <span class="tag">Theory Z</span>
+      <h3>Decide together</h3>
+      <p>Shared goals, consensus, and credit to the individual who did the work. How our exec board runs.</p>
+    </div>
+  </div>
+  <div class="proof"><span>Where it shows</span>On Raftaar's exec board, money decisions are made as a group. I bring the numbers. The board makes the call.</div>
+</section>
+
+<section id="orientation" data-name="Orientation">
+  <p class="stamp">Log 03 / Task, relationship, and change</p>
+  <h2>Task first. Then <em>change</em> how the task gets done.</h2>
+  <div class="meters" role="img" aria-label="Emphasis: task highest, change second, relationship third and growing">
+    <div class="meter"><div>Task<small>meaning in doing</small></div><div class="track"><div class="fill" style="width:90%"></div></div></div>
+    <div class="meter"><div>Change<small>fix the process</small></div><div class="track"><div class="fill" style="width:72%"></div></div></div>
+    <div class="meter"><div>Relationship<small>the one I work on</small></div><div class="track"><div class="fill dim" style="width:50%"></div></div></div>
+  </div>
+  <div class="proof"><span>Evidence</span>Raftaar used to ask for sponsors one at a time, with no plan. With the board, I turned it into a repeatable process: one list, one pitch, one follow-up schedule.</div>
+</section>
+
+<section id="skills" data-name="Skills">
+  <p class="stamp">Log 04 / Personal skills</p>
+  <h2>Six skills, and <em>where I used them.</em></h2>
+  <div class="grid g3">
+    <div class="card">
+      <span class="tag">Administrative</span>
+      <ul>
+        <li><strong>Managing resources</strong><span>I run the Raftaar team budget for the season.</span></li>
+        <li><strong>Technical competence</strong><span>I build the trackers the board works from.</span></li>
+      </ul>
+    </div>
+    <div class="card">
+      <span class="tag">Interpersonal</span>
+      <ul>
+        <li><strong>Building consensus</strong><span>Getting an exec board to agree when money is tight.</span></li>
+        <li><strong>Clear communication</strong><span>Explaining budget tradeoffs in plain language.</span></li>
+      </ul>
+    </div>
+    <div class="card">
+      <span class="tag">Conceptual</span>
+      <ul>
+        <li><strong>Problem solving</strong><span>Turned one-off sponsor asks into a system.</span></li>
+        <li><strong>Strategic planning</strong><span>Planning the budget around competitions before the season starts.</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="strengths" data-name="Strengths">
+  <p class="stamp">Log 05 / Personal strengths</p>
+  <h2>What I bring <em>without being asked.</em></h2>
+  <div class="grid g3">
+    <div class="card hot">
+      <span class="tag">Influencing</span>
+      <h3>Activator</h3>
+      <p>I start. I would rather show a rough first version than talk about a perfect one.</p>
+    </div>
+    <div class="card">
+      <span class="tag">Executing</span>
+      <h3>Achiever</h3>
+      <p>I finish. A project is not real to me until it is done and in use.</p>
+    </div>
+    <div class="card">
+      <span class="tag">Executing</span>
+      <h3>Responsibility</h3>
+      <p>If my name is on it, it gets done. That matters most when it is other people's money.</p>
+    </div>
+  </div>
+  <p class="lede" style="font-size:clamp(15px,1.2vw,18px);margin-top:20px">Self-identified, using Gallup's strength themes from Chapter 6.</p>
+</section>
+
+<section id="vision" data-name="Vision">
+  <p class="stamp">Log 06 / Career vision</p>
+  <p class="big">To build tools and teams that turn good ideas into <em style="font-style:normal;color:var(--accent)">finished work</em>, and to lead them the way I would want to be led.</p>
+  <div class="chips">
+    <span><b>Picture</b> finished work</span>
+    <span><b>Change</b> ideas that actually ship</span>
+    <span><b>Values</b> trust, ownership, follow-through</span>
+  </div>
+</section>
+
+<section id="quote" data-name="Quote">
+  <p class="stamp">Log 07 / The line I lead by</p>
+  <blockquote>Well done is better than well said.</blockquote>
+  <cite>Benjamin Franklin, Poor Richard's Almanack</cite>
+  <p class="lede">Leadership runs on credibility, and credibility comes from finished work. People follow what you have built, not what you have promised.</p>
+</section>
+
+</main>
+
+<div class="dots" id="dots" aria-hidden="true"></div>
+<div class="count" aria-hidden="true"><b id="n">01</b> / 07</div>
+
+<script>
+(function(){
+  var secs=[].slice.call(document.querySelectorAll('section'));
+  var links=[].slice.call(document.querySelectorAll('.bar nav a'));
+  var dots=document.getElementById('dots'), n=document.getElementById('n'), cur=0;
+  secs.forEach(function(s,i){
+    var a=document.createElement('a');a.href='#'+s.id;a.title=s.dataset.name;dots.appendChild(a);
+  });
+  var dotLinks=[].slice.call(dots.children);
+  function mark(i){
+    cur=i;
+    links.forEach(function(l,j){l.classList.toggle('on',j===i)});
+    dotLinks.forEach(function(d,j){d.classList.toggle('on',j===i)});
+    n.textContent=('0'+(i+1)).slice(-2);
+  }
+  function go(i){
+    i=Math.max(0,Math.min(secs.length-1,i));
+    secs[i].scrollIntoView();
+    mark(i);
+  }
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){
+      es.forEach(function(e){if(e.isIntersecting)mark(secs.indexOf(e.target))});
+    },{threshold:.55});
+    secs.forEach(function(s){io.observe(s)});
+  }
+  mark(0);
+  document.addEventListener('keydown',function(e){
+    if(e.metaKey||e.ctrlKey||e.altKey)return;
+    var k=e.key;
+    if(k==='ArrowDown'||k==='ArrowRight'||k==='PageDown'||k===' '){e.preventDefault();go(cur+1)}
+    else if(k==='ArrowUp'||k==='ArrowLeft'||k==='PageUp'){e.preventDefault();go(cur-1)}
+    else if(k==='Home'){e.preventDefault();go(0)}
+    else if(k==='End'){e.preventDefault();go(secs.length-1)}
+    else if(k>='1'&&k<='7'){go(+k-1)}
+  });
+})();
+</script>
+</body>
+</html>
